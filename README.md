@@ -1,23 +1,30 @@
-# Calculadora Básica em Java (Console MVP)
+# 🧮 Calculadora em Java (JavaFX - MVC)
 
-Uma aplicação de calculadora modular desenvolvida em Java, focada em boas práticas de Programação Orientada a Objetos (POO), arquitetura desacoplada e resiliência no tratamento de exceções.
+Uma aplicação de calculadora construída em Java com interface gráfica utilizando **JavaFX**. O projeto foi desenvolvido com forte foco em boas práticas de engenharia de software, separando rigorosamente a lógica de negócio da interface através do padrão arquitetural **MVC (Model-View-Controller)**.
 
-## 🛠️ Tecnologias e Ferramentas
-- **Linguagem:** Java (JDK 17 ou superior)
-- **Testes Unitários:** JUnit 5
-- **Controlo de Versões:** Git
+*(Cole aqui o link da imagem da sua calculadora funcionando)*
 
-## 📌 Funcionalidades
-- Operações matemáticas básicas: Adição, Subtração, Multiplicação e Divisão.
-- Tratamento robusto contra divisões por zero (`ArithmeticException`).
-- Proteção contra entradas de dados inválidas (`InputMismatchException`), garantindo que o programa não crasha caso o utilizador digite letras.
-- Fluxo contínuo de execução através de menus interativos em loop.
+## ✨ Funcionalidades
+- **Operações Básicas:** Adição, Subtração, Multiplicação e Divisão.
+- **Tratamento de Exceções Resiliente:** Proteção nativa contra divisões por zero (`ArithmeticException`) e entradas inválidas. O sistema exibe a mensagem "Erro" no visor em vez de quebrar a aplicação.
+- **Interface Moderna:** UI estruturada via FXML e estilizada com cores sólidas, com botões bem dimensionados e visor limpo.
+- **Testes Unitários:** Regras de negócio validadas automaticamente.
 
-## 🧱 Estrutura do Projeto (Arquitetura)
-O projeto foi construído seguindo o princípio de separação de responsabilidades:
-- `domain/`: Contém a lógica de negócio pura (matemática), 100% isolada e testável.
-- `ui/`: Camada de interface gráfica de texto (Console), responsável pela interação com o utilizador.
-- `Main`: Ponto de entrada que liga as camadas e inicia a execução.
+## 🧱 Arquitetura e Estrutura
+O projeto prova a eficácia de uma arquitetura limpa e desacoplada: a interface gráfica foi completamente reescrita (de Console para JavaFX) sem que uma única linha de código da lógica matemática precisasse ser alterada.
 
-## 🧪 Como Executar os Testes
-Para correr os testes unitários automatizados com o JUnit: Executar o arquivo CalculadoraTest.
+- `domain/` (Model): A classe `Calculadora.java` contém a matemática pura. Totalmente testável e cega em relação a frameworks visuais.
+- `ui/` (Controller): O `CalculadoraController.java` atua como ponte. Intercepta os eventos de clique, chama o Model e atualiza a View.
+- `resources/.../calculadora.fxml` (View): O layout visual declarado e separado do código Java.
+
+## 🛠️ Tecnologias Utilizadas
+- **Java 26**
+- **JavaFX 26** (Controls & FXML)
+- **JUnit 5** (Testes de Integração e Unidade)
+- **Maven** / **Git**
+
+## 🚀 Como Executar
+
+1. Clone este repositório:
+```bash
+git clone [https://github.com/lassis7/calculadora-java-.git](https://github.com/lassis7/calculadora-java-.git)

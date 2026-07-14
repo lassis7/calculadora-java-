@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="br.com.calculadora.ui.CalculadoraController" style="-fx-background-color: #001A33;">
+
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0"/>
+    </padding>
+
+    <TextField fx:id="visor" alignment="CENTER_RIGHT" editable="false" prefHeight="60.0"
+               style="-fx-font-size: 24px; -fx-background-color: #002B4D; -fx-text-fill: #FFFFFF; -fx-border-color: #00D1FF; -fx-border-radius: 4px;"/>
+
+    <GridPane hgap="8.0" vgap="8.0">
+        <Button text="7" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <Button text="8" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+        <Button text="9" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <Button text="/" onAction="#processarOperacao" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="3" GridPane.rowIndex="0" style="-fx-background-color: #002B4D; -fx-text-fill: #00D1FF;"/>
+
+        <Button text="4" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Button text="5" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        <Button text="6" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+        <Button text="*" onAction="#processarOperacao" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="3" GridPane.rowIndex="1" style="-fx-background-color: #002B4D; -fx-text-fill: #00D1FF;"/>
+
+        <Button text="1" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Button text="2" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Button text="3" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+        <Button text="-" onAction="#processarOperacao" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="3" GridPane.rowIndex="2" style="-fx-background-color: #002B4D; -fx-text-fill: #00D1FF;"/>
+
+        <Button text="C" onAction="#limparVisor" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-background-color: #FF3333; -fx-text-fill: white;"/>
+        <Button text="0" onAction="#processarNumero" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+        <Button text="=" onAction="#calcularResultado" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="2" GridPane.rowIndex="3" style="-fx-background-color: #00D1FF; -fx-text-fill: #001A33;"/>
+        <Button text="+" onAction="#processarOperacao" prefWidth="60.0" prefHeight="60.0" GridPane.columnIndex="3" GridPane.rowIndex="3" style="-fx-background-color: #002B4D; -fx-text-fill: #00D1FF;"/>
+    </GridPane>
+</VBox>
