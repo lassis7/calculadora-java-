@@ -1,31 +1,34 @@
-# 🧮 Calculadora em Java (JavaFX - MVC)
+# 🧮 Calculadora em Java (V3.0 - Design Patterns & JavaFX)
 
-Uma aplicação de calculadora construída em Java com interface gráfica utilizando **JavaFX**. O projeto foi desenvolvido com forte foco em boas práticas de engenharia de software, separando rigorosamente a lógica de negócio da interface através do padrão arquitetural **MVC (Model-View-Controller)**.
+Uma aplicação de calculadora de nível corporativo desenvolvida em Java, combinando uma interface gráfica moderna em **JavaFX** com uma arquitetura de software altamente escalável baseada em **Design Patterns** e princípios **SOLID**.
 
 <img width="366" height="550" alt="Captura de tela 2026-07-14 114533" src="https://github.com/user-attachments/assets/40f37f67-8784-4335-b6e9-d8d4be97a8b9" />
 
 
-## ✨ Funcionalidades
-- **Operações Básicas:** Adição, Subtração, Multiplicação e Divisão.
-- **Tratamento de Exceções Resiliente:** Proteção nativa contra divisões por zero (`ArithmeticException`) e entradas inválidas. O sistema exibe a mensagem "Erro" no visor em vez de quebrar a aplicação.
-- **Interface Moderna:** UI estruturada via FXML e estilizada com cores sólidas, com botões bem dimensionados e visor limpo.
-- **Testes Unitários:** Regras de negócio validadas automaticamente.
+## ✨ Evolução e Versões do Projeto
+- **V1.0 (Console):** Foco em lógica pura, arquitetura desacoplada e resiliência no tratamento de exceções via terminal.
+- **V2.0 (JavaFX / MVC):** Migração para interface gráfica desacoplada utilizando o padrão arquitetural MVC.
+- **V3.0 (Design Patterns):** Refatoração completa do núcleo de negócio aplicando o padrão **Strategy** para garantir extensibilidade e conformidade com o Open/Closed Principle (OCP).
 
-## 🧱 Arquitetura e Estrutura
-O projeto prova a eficácia de uma arquitetura limpa e desacoplada: a interface gráfica foi completamente reescrita (de Console para JavaFX) sem que uma única linha de código da lógica matemática precisasse ser alterada.
+## 🏛️ Arquitetura & Padrões de Projeto (V3.0)
+A grande inovação desta versão reside na camada de domínio (`domain`), na qual a complexidade de múltiplos `switch-cases` foi eliminada através do **Strategy Design Pattern**:
+- **`OperacaoMatematica` (Interface):** Define o contrato unificado que todas as operações devem seguir.
+- **Classes Concretas (`Soma`, `Subtracao`, `Multiplicacao`, `Divisao`):** Cada operação encapsula a sua própria lógica de cálculo de forma isolada.
+- **Polimorfismo:** A classe `Calculadora` utiliza um mapa (`Map`) para gerenciar e executar as estratégias dinamicamente, permitindo adicionar novas operações matemáticas sem alterar nenhuma linha do código existente.
 
-- `domain/` (Model): A classe `Calculadora.java` contém a matemática pura. Totalmente testável e cega em relação a frameworks visuais.
-- `ui/` (Controller): O `CalculadoraController.java` atua como ponte. Intercepta os eventos de clique, chama o Model e atualiza a View.
-- `resources/.../calculadora.fxml` (View): O layout visual declarado e separado do código Java.
+## 🧱 Estrutura de Pacotes
+- `domain/`: Regras de negócio puras, contratos de interfaces e classes estratégicas de cálculo.
+- `ui/`: Controlador JavaFX (`CalculadoraController`).
+- `resources/`: Arquivo visual FXML.
 
 ## 🛠️ Tecnologias Utilizadas
-- **Java 26**
-- **JavaFX 26** (Controls & FXML)
-- **JUnit 5** (Testes de Integração e Unidade)
-- **Maven** / **Git**
+- **Java 28**
+- **JavaFX 17** (Controls & FXML)
+- **JUnit 5** (Testes unitários)
+- **Maven & Git**
 
 ## 🚀 Como Executar
 
 1. Clone este repositório:
 ```bash
-git clone [https://github.com/lassis7/calculadora-java-.git](https://github.com/lassis7/calculadora-java-.git)
+git clone [https://github.com/lassis7/calculadora-java.git](https://github.com/lassis7/calculadora-java.git)
