@@ -2,7 +2,8 @@
 
 Uma aplicação de calculadora construída em Java com interface gráfica utilizando **JavaFX**. O projeto foi desenvolvido com forte foco em boas práticas de engenharia de software, separando rigorosamente a lógica de negócio da interface através do padrão arquitetural **MVC (Model-View-Controller)**.
 
-*(Cole aqui o link da imagem da sua calculadora funcionando)*
+<img width="366" height="550" alt="Captura de tela 2026-07-14 114533" src="https://github.com/user-attachments/assets/40f37f67-8784-4335-b6e9-d8d4be97a8b9" />
+
 
 ## ✨ Funcionalidades
 - **Operações Básicas:** Adição, Subtração, Multiplicação e Divisão.
