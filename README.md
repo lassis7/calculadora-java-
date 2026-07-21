@@ -2,7 +2,8 @@
 
 Uma aplicação de calculadora de nível corporativo desenvolvida em Java, combinando uma interface gráfica moderna em **JavaFX** com uma arquitetura de software altamente escalável baseada em **Design Patterns** e princípios **SOLID**.
 
-<img width="366" height="550" alt="Captura de tela 2026-07-14 114533" src="https://github.com/user-attachments/assets/40f37f67-8784-4335-b6e9-d8d4be97a8b9" />
+<img width="366" height="552" alt="Captura de tela 2026-07-21 094516" src="https://github.com/user-attachments/assets/3d16801e-021e-4956-b924-4acb5f34aa9f" />
+
 
 
 ## ✨ Evolução e Versões do Projeto
