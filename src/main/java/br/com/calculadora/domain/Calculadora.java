@@ -1,24 +1,31 @@
 package br.com.calculadora.domain;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Calculadora {
 
-    public double somar(double a, double b) {
-        return a + b;
+    // O mapa atua como uma "fábrica" de estratégias
+    private final Map<String, OperacaoMatematica> operacoes = new HashMap<>();
+
+    public Calculadora() {
+        // Registramos as operações disponíveis no momento da criação da calculadora
+        operacoes.put("+", new Soma());
+        operacoes.put("-", new Subtracao());
+        operacoes.put("*", new Multiplicacao());
+        operacoes.put("/", new Divisao());
+        operacoes.put("^", new Potencia());
     }
 
-    public double subtrair(double a, double b) {
-        return a - b;
-    }
+    public double executarOperacao(String operador, double a, double b) {
+        // Buscamos a estratégia correta baseada no símbolo (+, -, *, /)
+        OperacaoMatematica operacao = operacoes.get(operador);
 
-    public double multiplicar(double a, double b) {
-        return a * b;
-    }
-
-    public double dividir(double a, double b) {
-        if (b == 0) {
-            // Lançamos a exceção aqui para que a camada de UI decida como mostrar o erro ao usuário
-            throw new ArithmeticException("Erro: Divisão por zero não é permitida.");
+        if (operacao == null) {
+            throw new IllegalArgumentException("Operação não suportada: " + operador);
         }
-        return a / b;
+
+        // Executamos o cálculo sem precisar de nenhum IF ou SWITCH
+        return operacao.calcular(a, b);
     }
 }

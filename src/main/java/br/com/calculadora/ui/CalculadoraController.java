@@ -55,21 +55,8 @@ public class CalculadoraController {
             double segundoNumero = Double.parseDouble(visor.getText());
             double resultado = 0;
 
-            switch (operacao) {
-                case "+":
-                    resultado = calculadora.somar(primeiroNumero, segundoNumero);
-                    break;
-                case "-":
-                    resultado = calculadora.subtrair(primeiroNumero, segundoNumero);
-                    break;
-                case "*":
-                    resultado = calculadora.multiplicar(primeiroNumero, segundoNumero);
-                    break;
-                case "/":
-                    // O método dividir lança ArithmeticException se segundoNumero for 0
-                    resultado = calculadora.dividir(primeiroNumero, segundoNumero);
-                    break;
-            }
+            // Onde antes havia um switch-case inteiro, agora fica apenas:
+            resultado = calculadora.executarOperacao(operacao, primeiroNumero, segundoNumero);
 
             // Exibe o resultado formatado no visor
             visor.setText(String.valueOf(resultado));
